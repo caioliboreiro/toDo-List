@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <aside class="projects-section">
+      <span class="projects-header"
+        ><h3>My Projects</h3>
+        <button class="add-project-btn">
+          <img src="./assets/add.svg" alt="" /></button
+      ></span>
+      <div class="user-projects"></div>
+      <button class="save-data-btn">Save Data</button>
+    </aside>
+
+    <section class="tasks-section">
+      <div class="tasks-wrapper">
+        <ul class="task-list"></ul>
+
+        <div class="add-task-wrapper">
+          <button class="add-task-btn">+</button
+          ><span class="add-task-label">Add a Task</span>
+        </div>
+      </div>
+    </section>
+
+    <dialog class="add-project-modal">
+      <div class="modal-content">
+        <div class="modal-top">
+          <span class="modal-heading">Add a Project</span>
+          <img class="close-add-project-btn" src="./assets/close.svg" alt="" />
+        </div>
+
+        <div class="main-content-add-project-modal">
+          <label for="new-project-name">Name</label>
+          <input
+            type="text"
+            autocomplete="off"
+            name="new-project-name"
+            id="new-project-name"
+          />
+          <button class="submit-project-btn">Add Project</button>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="add-task-modal">
+      <div class="modal-content">
+        <div class="modal-top">
+          <span class="modal-heading">Add a Task</span>
+          <img class="close-add-task-btn" src="./assets/close.svg" alt="" />
+        </div>
+
+        <div class="main-content-add-task-modal">
+          <input
+            type="text"
+            autocomplete="off"
+            name="task-title-input"
+            id="task-title-input"
+            placeholder="Task Title"
+          />
+
+          <input
+            type="text"
+            autocomplete="off"
+            name="task-desc-input"
+            id="task-desc-input"
+            placeholder="Description"
+          />
+
+          <div class="date-priority-wrapper">
+            <div class="due-date-input-wrapper" dueDateInput>
+              <label for="due-date-input">Due Date</label>
+              <input
+                type="text"
+                autocomplete="off"
+                name="due-date"
+                id="add-due-date-input"
+                placeholder="mm/dd/yyyy"
+                onfocus="(this.type='date')"
+                onblur="(this.type='text')"
+              />
+            </div>
+
+            <div class="priority-input-wrapper" priorityInput>
+              <label for="priority-input">Priority</label>
+              <select name="priority" id="priority-input">
+                <option class="high-option" value="high">High</option>
+                <option class="medium-option" value="medium">Medium</option>
+                <option class="low-option" value="low">Low</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="project-input-wrapper">
+            <label for="project-input">Project</label>
+            <select name="project" id="project-input"></select>
+          </div>
+
+          <button class="submit-task-btn">Add Task</button>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="edit-modal">
+      <div class="modal-content">
+        <div class="modal-top">
+          <span class="edit-modal-heading"></span>
+          <img class="close-edit-task-btn" src="./assets/close.svg" alt="" />
+        </div>
+
+        <div class="main-content-edit-modal">
+          <section class="edit-modal-name-desc-section">
+            <div class="task-name-wrapper">
+              <input
+                class="edit-modal-task-name"
+                type="text"
+                autocomplete="off"
+                readonly
+              />
+              <button class="edit-modal-task-name-btn">EDIT</button>
+            </div>
+            <div class="task-name-wrapper">
+              <input
+                class="edit-modal-task-desc"
+                type="text"
+                autocomplete="off"
+                readonly
+              />
+              <button class="edit-modal-task-desc-btn">EDIT</button>
+            </div>
+          </section>
+
+          <aside class="edit-date-priority">
+            <div class="project-input-wrapper">
+              <label for="project-input">Project</label>
+              <select name="project" id="edit-project-input"></select>
+            </div>
+
+            <div class="due-date-input-wrapper" dueDateInput>
+              <label for="due-date-Input">Due Date</label>
+              <input
+                type="text"
+                autocomplete="off"
+                name="due-date"
+                id="due-date-input"
+                class="due-date-input"
+                placeholder=""
+                onfocus="(this.type='date')"
+                onblur="(this.type='text')"
+              />
+            </div>
+
+            <div class="priority-input-wrapper" priorityInput>
+              <label for="priority-input">Priority</label>
+              <select name="priority" id="edit-priority-input">
+                <option class="high-option" value="high">High</option>
+                <option class="medium-option" value="medium">Medium</option>
+                <option class="low-option" value="low">Low</option>
+              </select>
+            </div>
+
+            <button class="edit-task-btn">Edit Task</button>
+          </aside>
+        </div>
+      </div>
+    </dialog>
+
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
