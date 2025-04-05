@@ -1,6 +1,7 @@
 # How to set up this app
-1 - run `npm install`
-2 - run `npx webpack`
+1. Run `npm install`
+2. Run `npx webpack`
+3. You're good to go.
 
 A `dist` folder will be created. Inside of it there will be the an `index.html`. That's the app.
 
